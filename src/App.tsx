@@ -6,7 +6,15 @@ const App: React.FC = () => {
 
   useEffect(() => {
     fetch('/articles/20200123.md')
-    .then(response => response.text())
+    .then(async response => {
+      if (response.status !== 200) {
+        // for deploy environment routing
+        const res = await fetch('/my-blog/articles/20200123.md');
+        return await res.text();
+      } else {
+        return response.text()
+      }
+    })
     .then(text => setMarkdownText(text))
     .catch(err => console.log(err));
   }, [])
