@@ -5,6 +5,7 @@ const App: React.FC = () => {
   const [markdownText, setMarkdownText] = useState('');
 
   useEffect(() => {
+    console.log(window.location)
     fetch('/articles/20200123.md')
     .then(async response => {
       if (response.status !== 200) {
