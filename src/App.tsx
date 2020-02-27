@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
+import * as Showdown from 'showdown';
 import './App.css';
 
 const App: React.FC = () => {
   const [markdownText, setMarkdownText] = useState('');
+  const converter = new Showdown.Converter();
 
   useEffect(() => {
-    // use github api to get file list
+    // use github get file list
     fetch('https://api.github.com/repos/angryshhh/my-blog/contents/public/articles')
     .then(response => response.json())
     .then(json => console.log(json))
@@ -20,9 +22,7 @@ const App: React.FC = () => {
 
   return (
     <div className="App">
-      <pre>
-        {markdownText}
-      </pre>
+      <div dangerouslySetInnerHTML={{__html: converter.makeHtml(markdownText)}} ></div>
     </div>
   );
 }
