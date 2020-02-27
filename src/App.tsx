@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import * as Showdown from 'showdown';
+import Markdown from './components/Markdown';
 import './App.css';
 
 const App: React.FC = () => {
   const [markdownText, setMarkdownText] = useState('');
-  const converter = new Showdown.Converter();
 
   useEffect(() => {
     // use github get file list
@@ -22,7 +21,7 @@ const App: React.FC = () => {
 
   return (
     <div className="App">
-      <div dangerouslySetInnerHTML={{__html: converter.makeHtml(markdownText)}} ></div>
+      <Markdown markdownText={markdownText} />
     </div>
   );
 }
