@@ -8,6 +8,7 @@ fs.readdir(`${__dirname}/articles`, (err, files) => {
     files.forEach(file => {
       let blogInfo = file.slice(0, -3).split('-');
       blogList.push({
+        fileName: file,
         time: `${blogInfo[0].substring(0, 4)}-${blogInfo[0].substring(4, 6)}-${blogInfo[0].substring(6)}`,
         title: blogInfo[1],
         tags: blogInfo.slice(2),
