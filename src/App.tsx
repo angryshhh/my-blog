@@ -19,7 +19,7 @@ const App: React.FC = () => {
     fetch(`${window.location.pathname}blogList.json`)
     .then(response => response.json())
     .then((json: MarkdownInfo[]) => {
-      fetch(`${window.location.pathname}articles/${json[0].fileName}`)
+      fetch(`${window.location.pathname}articles/${json[1].fileName}`)
       .then(response => response.text())
       .then(text => setMarkdownText(text))
       .catch(err => console.log(err));
