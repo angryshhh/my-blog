@@ -1,3 +1,11 @@
+.blog-list {
+  background: green;
+}
+
 .blog-list a {
   display: block;
+  margin: 0 auto;
+  background: yellow;
+  width: 200px;
+  height: 200px;
 }

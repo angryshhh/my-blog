@@ -5,6 +5,7 @@ import {
 } from 'react-router-dom';
 import Markdown from './components/Markdown';
 import BlogList from './components/BlogList';
+import Profile from './components/Profile';
 import './App.css';
 
 interface MarkdownInfo {
@@ -29,6 +30,7 @@ const App: React.FC = () => {
 
   return (
     <div className="App">
+      <Profile />
       <Switch>
         <Route exact path={`/${window.location.pathname.indexOf('/my-blog') > -1 ? 'my-blog' : ''}`}>
           <BlogList rootPath={rootPath} blogList={blogList} />
