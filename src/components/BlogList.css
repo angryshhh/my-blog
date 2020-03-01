@@ -1,11 +1,12 @@
 .blog-list {
+  flex-grow: 1;
   background: green;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .blog-list a {
-  display: block;
-  margin: 0 auto;
   background: yellow;
-  width: 200px;
-  height: 200px;
+  height: 50px;
 }

@@ -4,7 +4,7 @@ import './Profile.css'
 const Profile: React.FC = () => {
 
   return <div className="profile">
-    资料
+      a
   </div>;
 };
 

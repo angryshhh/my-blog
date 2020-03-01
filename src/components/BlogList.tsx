@@ -30,7 +30,7 @@ const BlogList: React.FC<Props> = (props: Props) => {
       </a>)
     }
     {
-      new Array(4).fill(1).map((value, index) => <a
+      new Array(8).fill(1).map((value, index) => <a
         key={index}
         href={`${index}`}
         
