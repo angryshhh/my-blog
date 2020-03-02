@@ -1,12 +1,21 @@
 .blog-list {
   flex-grow: 1;
-  background: green;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
 .blog-list a {
-  background: yellow;
+  display: block;
   height: 50px;
+}
+
+@media screen and (min-width: 600px) {
+  .blog-list {
+    overflow: auto;
+  }
+
+  .blog-list a {
+    flex-shrink: 0;
+  }
 }

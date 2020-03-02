@@ -1,5 +1,13 @@
 .App {
   min-height: 100vh;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 600px) {
+  /* 当屏幕宽大于600px时采用下面样式 */
+  .App {
+    height: 100vh;
+    flex-direction: row;
+  }
 }

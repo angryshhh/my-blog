@@ -1,7 +1,22 @@
 .markdown {
   padding: 0 40px;
+  flex-grow: 1;
+}
+
+.markdown img {
+  max-width: 100%;
+}
+
+.markdown pre {
+  overflow: auto;
 }
 
 .JavaScript {
   color: purple;
+}
+
+@media screen and (min-width: 600px) {
+  .markdown {
+    overflow: auto;
+  }
 }
