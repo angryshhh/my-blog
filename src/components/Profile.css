@@ -1,5 +1,9 @@
 .profile {
+  padding: 40px 0;
   background: gray;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 @media screen and (min-width: 600px) {
@@ -7,4 +11,20 @@
     width: 300px;
     flex-shrink: 0;
   }
+}
+
+.profile-picture {
+  width: 50%;
+}
+
+.profile:after {
+  /* to make it square */
+  /* content: ''; dont need this, or it will make height 3px higher in pc and out of control in mobile */
+  display: block;
+  padding-bottom: 100%;
+}
+
+.profile-picture img {
+  width: 100%;
+  border-radius: 50%;
 }

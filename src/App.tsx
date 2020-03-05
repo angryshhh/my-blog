@@ -16,7 +16,6 @@ interface MarkdownInfo {
 }
 
 const rootPath = `/${window.location.pathname.indexOf('my-blog') > -1 ? 'my-blog/' : ''}`;
-console.log(rootPath);
 
 const App: React.FC = () => {
   const [blogList, setBlogList] = useState(new Array<MarkdownInfo>());
