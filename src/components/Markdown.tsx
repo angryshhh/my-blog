@@ -7,19 +7,17 @@ const converter = new Showdown.Converter();
 converter.setFlavor('github');
 converter.setOption('openLinksInNewWindow', true);
 
-interface Props {
-  rootPath: string;
-}
+const rootPath = `/${window.location.pathname.indexOf('my-blog') > -1 ? 'my-blog/' : ''}`;
 
-const Markdown: React.FC<Props> = (props) => {
+const Markdown: React.FC = (props) => {
   let { fileName } = useParams();
   const [markdownText, setMarkdownText] = useState('');
   useEffect(() => {
-    fetch(`${props.rootPath}articles/${fileName}`)
+    fetch(`${rootPath}articles/${fileName}`)
     .then(response => response.text())
     .then(text => setMarkdownText(text))
     .catch(err => console.log(err));
-  }, [fileName, props.rootPath]);
+  }, [fileName]);
 
   return <div
     className="markdown"

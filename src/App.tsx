@@ -31,10 +31,10 @@ const App: React.FC = () => {
     <div className="App">
       <Profile />
       <Switch>
-        <Route exact path={`/${window.location.pathname.indexOf('/my-blog') > -1 ? 'my-blog' : ''}`}>
-          <BlogList rootPath={rootPath} blogList={blogList} />
+        <Route exact path={rootPath}>
+          <BlogList blogList={blogList} />
         </Route>
-        <Route path={`/${window.location.pathname.indexOf('/my-blog') > -1 ? 'my-blog/' : ''}:fileName`} children={<Markdown rootPath={rootPath} />} />
+        <Route path={`${rootPath}:fileName`} children={<Markdown />} />
       </Switch>
     </div>
   );

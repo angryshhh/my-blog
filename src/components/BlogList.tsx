@@ -11,8 +11,9 @@ interface MarkdownInfo {
 
 interface Props {
   blogList: MarkdownInfo[];
-  rootPath: string;
 }
+
+const rootPath = `/${window.location.pathname.indexOf('my-blog') > -1 ? 'my-blog/' : ''}`;
 
 const BlogList: React.FC<Props> = (props: Props) => {
   let history = useHistory();
@@ -23,7 +24,7 @@ const BlogList: React.FC<Props> = (props: Props) => {
         key={blog.fileName}
         onClick={e => {
           e.preventDefault();
-          history.push(`${props.rootPath}${blog.fileName}`)
+          history.push(`${rootPath}${blog.fileName}`)
         }}
       >
         {blog.title}
