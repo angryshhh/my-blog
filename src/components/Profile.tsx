@@ -12,22 +12,10 @@ const Profile: React.FC = () => {
     <h3>崔明远/Trim Ryan</h3>
     JavaScript好使！
     <div className="link-list">
-        <a href="https://github.com/angryshhh">
-          <img src={GitHubIcon} alt="github" />
-          angry
-        </a>
-        <a href="https://github.com/angryshhh">
-          <img src={GitHubIcon} alt="github" />
-          angryshhh
-        </a>
-        <a href="https://github.com/angryshhh">
-          <img src={GitHubIcon} alt="github" />
-          angryshhhsssss
-        </a>
-        <a href="https://pornhubb.com/">
-          <img src={GitHubIcon} alt="github" />
-          an
-        </a>
+      <a href="https://github.com/angryshhh">
+        <img src={GitHubIcon} alt="github" />
+        angry
+      </a>
     </div>
     <div className="profile-footer">© 崔明远 Powered By Trim Ryan</div>
   </div>;

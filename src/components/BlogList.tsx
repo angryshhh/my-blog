@@ -1,5 +1,5 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
+import BlogItem from './BlogItem';
 import './BlogList.css';
 
 interface MarkdownInfo {
@@ -13,23 +13,20 @@ interface Props {
   blogList: MarkdownInfo[];
 }
 
-const rootPath = `/${window.location.pathname.indexOf('my-blog') > -1 ? 'my-blog/' : ''}`;
-
 const BlogList: React.FC<Props> = (props: Props) => {
-  let history = useHistory();
   return (<div className="blog-list">
+    <div>
+      <a href=" ">上一页</a><a href=" ">下一页</a>
+    </div>
     {
-      props.blogList.map(blog => <a
-        href={blog.fileName}
+      props.blogList.map(blog => <BlogItem
         key={blog.fileName}
-        onClick={e => {
-          e.preventDefault();
-          history.push(`${rootPath}${blog.fileName}`)
-        }}
-      >
-        {blog.title}
-      </a>)
+        markdownInfo={blog}
+      />)
     }
+    <div>
+      <a href=" ">上一页</a><a href=" ">下一页</a>
+    </div>
   </div>);
 }
 
