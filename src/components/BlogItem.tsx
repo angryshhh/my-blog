@@ -23,7 +23,7 @@ const BlogItem: React.FC<Props> = (props) => {
     href={props.markdownInfo.fileName}
     onClick={e => {
       e.preventDefault();
-      history.push(`${rootPath}${props.markdownInfo.fileName}`);
+      history.push(`${rootPath}${props.markdownInfo.fileName.slice(0, -3)}`);
     }}
   >
     <span>{props.markdownInfo.title}</span>

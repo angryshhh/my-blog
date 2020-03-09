@@ -15,6 +15,7 @@ interface Props {
 const pageSize = 7;
 
 const BlogList: React.FC<Props> = (props: Props) => {
+  document.title = 'Trim Ryan';
   const pageCount = ~~(props.blogList.length / pageSize) + 1;
   const [pageNum, setPageNum] = useState(0);
 
