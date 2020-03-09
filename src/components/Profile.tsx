@@ -14,7 +14,7 @@ const Profile: React.FC = () => {
     <div className="link-list">
       <a href="https://github.com/angryshhh">
         <img src={GitHubIcon} alt="github" />
-        angry
+        angryshhh
       </a>
     </div>
     <div className="profile-footer">© 崔明远 Powered By Trim Ryan</div>

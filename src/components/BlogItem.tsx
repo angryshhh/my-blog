@@ -26,7 +26,13 @@ const BlogItem: React.FC<Props> = (props) => {
       history.push(`${rootPath}${props.markdownInfo.fileName}`);
     }}
   >
-    {props.markdownInfo.title}
+    <span>{props.markdownInfo.title}</span>
+    <br />
+    <span>{props.markdownInfo.time}</span>
+    <br />
+    {
+      props.markdownInfo.tags.map(tag => <span>{tag}</span>)
+    }
   </a>;
 };
 

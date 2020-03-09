@@ -1,5 +1,14 @@
 .blog-item {
   display: block;
-  height: 80px;
-  background: yellow;
+  height: 128px;
+  margin: 10px;
+  border: 1px solid grey;
+  padding: 5px 10px;
+  box-shadow: 10px 10px 5px grey;
+  text-decoration: none;
+  color: black;
+}
+
+.blog-item:visited {
+  color: black;
 }

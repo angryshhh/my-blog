@@ -16,15 +16,15 @@ interface Props {
 const BlogList: React.FC<Props> = (props: Props) => {
   return (<div className="blog-list">
     <div>
-      <a href=" ">上一页</a><a href=" ">下一页</a>
-    </div>
-    {
-      props.blogList.map(blog => <BlogItem
-        key={blog.fileName}
-        markdownInfo={blog}
-      />)
-    }
-    <div>
+      {/* <a href=" ">上一页</a><a href=" ">下一页</a> */}
+      </div>
+        {
+          props.blogList.map(blog => <BlogItem
+            key={blog.fileName}
+            markdownInfo={blog}
+          />)
+        }
+      <div>
       <a href=" ">上一页</a><a href=" ">下一页</a>
     </div>
   </div>);
