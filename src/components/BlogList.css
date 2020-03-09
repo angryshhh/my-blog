@@ -9,8 +9,12 @@
   .blog-list {
     overflow: auto;
   }
-
-  .blog-list a {
-    flex-shrink: 0;
+  
+  .blog-list::-webkit-scrollbar {
+    width: 0;
   }
+}
+
+.control-group {
+  padding: 15px;
 }
