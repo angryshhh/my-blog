@@ -1,7 +1,7 @@
 import React from 'react';
 import ProfilePicture from './profile_picture.jpg';
 import GitHubIcon from './github.svg';
-import './Profile.css'
+import './Profile.css';
 
 const Profile: React.FC = () => {
 

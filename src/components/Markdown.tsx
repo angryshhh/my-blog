@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Showdown from 'showdown';
+import hljs from 'highlight.js';
+import 'highlight.js/styles/monokai.css';
 import { useParams } from 'react-router-dom';
 import './Markdown.css';
 
@@ -21,12 +23,19 @@ const Markdown: React.FC = () => {
     document.title = (fileName?.split('-')[1] || '') + ' - Trim Ryan';
   }, [fileName]);
 
+  useEffect(() => {
+    document.querySelectorAll('pre code').forEach((block) => {
+      hljs.highlightBlock(block);
+    });
+  });
+
   return <div
     className="markdown"
     dangerouslySetInnerHTML={{
       __html: converter.makeHtml(markdownText),
     }}
-  />;
+  >
+  </div>;
 };
 
 export default Markdown;
