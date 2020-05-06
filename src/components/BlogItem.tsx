@@ -31,10 +31,7 @@ const BlogItem: React.FC<Props> = (props) => {
     <span>{props.markdownInfo.time}</span>
     <br />
     {
-      props.markdownInfo.tags.length > 0 ? '🏷:' : ''
-    }
-    {
-      props.markdownInfo.tags.map(tag => <span key={tag}>{tag}</span>)
+      props.markdownInfo.tags.map(tag => <span key={tag}>🏷{tag}</span>)
     }
   </a>;
 };
