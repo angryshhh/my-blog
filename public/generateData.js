@@ -2,6 +2,7 @@ const fs = require('fs');
 
 fs.readdir(`${__dirname}/articles`, (err, files) => {
   const blogList = [];
+  const tags = {};
   if (err) {
     console.log(err);
   } else {
@@ -13,8 +14,16 @@ fs.readdir(`${__dirname}/articles`, (err, files) => {
         title: blogInfo[1],
         tags: blogInfo.slice(2),
       });
+      blogInfo.slice(2).forEach(tag => {
+        if (!tags[tag]) {
+          tags[tag] = true;
+        }
+      })
     });
   }
-  const jsonString = JSON.stringify(blogList);
-  fs.writeFile(`${__dirname}/blogList.json`, jsonString, err => {console.log(err);});
+  const jsonString = JSON.stringify({
+    blogList,
+    tags: Object.keys(tags),
+  });
+  fs.writeFile(`${__dirname}/siteData.json`, jsonString, err => {console.log(err);});
 });

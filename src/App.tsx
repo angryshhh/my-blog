@@ -15,15 +15,23 @@ interface MarkdownInfo {
   tags: string[];
 }
 
+interface SiteData {
+  blogList: MarkdownInfo[],
+  tags: string[];
+}
+
 const rootPath = `/${window.location.pathname.indexOf('my-blog') > -1 ? 'my-blog/' : ''}`;
 
 const App: React.FC = () => {
   const [blogList, setBlogList] = useState(new Array<MarkdownInfo>());
 
   useEffect(() => {
-    fetch(`${rootPath}blogList.json`)
+    fetch(`${rootPath}siteData.json`)
     .then((response => response.json()))
-    .then((json: MarkdownInfo[]) => setBlogList(json))
+    .then((json: SiteData) => {
+      setBlogList(json.blogList);
+      console.log('tags:' + json.tags);
+    })
     .catch(err => console.log(err));
   }, []);
 
