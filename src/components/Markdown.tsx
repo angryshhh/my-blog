@@ -25,7 +25,7 @@ const Markdown: React.FC = () => {
 
   useEffect(() => {
     document.querySelectorAll('pre code').forEach((block) => {
-      hljs.highlightBlock(block);
+      hljs.highlightBlock(block as HTMLElement);
     });
   });
 
